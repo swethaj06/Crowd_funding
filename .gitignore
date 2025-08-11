@@ -1,0 +1,24 @@
+# Node dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Build output
+build/
+dist/
+
+# Logs
+*.log
+
+# OS/IDE files
+.DS_Store
+.vscode/
+.idea/
+
+# Coverage and test output
+coverage/
+*.test.js.snap
+
+# Misc
+*.local

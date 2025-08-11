@@ -1,0 +1,20 @@
+{
+  "info": {
+    "name": "FundMe API",
+    "description": "API documentation for FundMe MERN fundraising platform",
+    "version": "1.0.0"
+  },
+  "item": [
+    { "name": "Register", "request": { "method": "POST", "url": "/api/auth/register" } },
+    { "name": "Login", "request": { "method": "POST", "url": "/api/auth/login" } },
+    { "name": "Create Fundraiser", "request": { "method": "POST", "url": "/api/fundraisers" } },
+    { "name": "Get Fundraisers", "request": { "method": "GET", "url": "/api/fundraisers" } },
+    { "name": "Donate", "request": { "method": "POST", "url": "/api/donations" } },
+    { "name": "Get Donations", "request": { "method": "GET", "url": "/api/donations/:fundraiserId" } },
+    { "name": "Heart Reaction", "request": { "method": "POST", "url": "/api/hearts" } },
+    { "name": "Get Heart Count", "request": { "method": "GET", "url": "/api/hearts/:fundraiserId" } },
+    { "name": "Admin Approve", "request": { "method": "POST", "url": "/api/admin/approve/:id" } },
+    { "name": "Admin Reject", "request": { "method": "POST", "url": "/api/admin/reject/:id" } },
+    { "name": "Upload File", "request": { "method": "POST", "url": "/api/upload" } }
+  ]
+}
