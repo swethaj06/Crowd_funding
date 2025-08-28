@@ -1,6 +1,6 @@
 # FundMe - MERN Fundraising Platform
 
-## Features
+## Feature
 - Roles: Admin, Fundraiser, Donor
 - Fundraiser registration, dashboard, file uploads, bank onboarding
 - Donor: browse, donate, comment, heart reaction

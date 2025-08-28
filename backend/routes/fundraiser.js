@@ -12,7 +12,8 @@ router.post('/', auth, async (req, res) => {
       description,
       category,
       goalAmount,
-      fundraiser: req.user.id
+      fundraiser: req.user.id,
+      isApproved: true // Auto-approve new campaigns
     });
     await fundraiser.save();
     res.status(201).json(fundraiser);

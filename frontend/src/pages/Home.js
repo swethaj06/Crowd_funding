@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import FundraiserCard from '../components/FundraiserCard';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const [fundraisers, setFundraisers] = useState([]);
-  useEffect(() => {
-    axios.get('/api/fundraisers').then(res => setFundraisers(res.data));
-  }, []);
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col min-h-[60vh] items-center justify-center py-12 px-4">
-      <h1 className="text-4xl font-extrabold mb-8 text-center text-blue-700">Featured Causes</h1>
-      {fundraisers.length === 0 ? (
-        <div className="text-gray-500 text-lg mt-8">No fundraisers yet. Be the first to <a href="/start-fundraising" className="text-blue-500 underline">start one</a>!</div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-          {fundraisers.map(f => <FundraiserCard key={f._id} fundraiser={f} />)}
-        </div>
-      )}
+    <div className="flex flex-col min-h-[60vh] items-center justify-center py-24 px-4">
+      <h1 className="text-4xl font-extrabold mb-8 text-center text-blue-700">Welcome to FundMe</h1>
+      <div className="flex gap-8">
+        <button
+          className="px-8 py-4 bg-blue-600 text-white rounded-lg text-xl font-semibold shadow hover:bg-blue-700 transition"
+          onClick={() => navigate('/login')}
+        >
+          Login
+        </button>
+        <button
+          className="px-8 py-4 bg-green-500 text-white rounded-lg text-xl font-semibold shadow hover:bg-green-600 transition"
+          onClick={() => navigate('/register')}
+        >
+          Sign Up
+        </button>
+      </div>
     </div>
   );
 };

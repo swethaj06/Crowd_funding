@@ -2,11 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const navLinks = [
-  { to: '/categories', label: 'Categories' },
-  { to: '/start-fundraising', label: 'Start Fundraising' },
-  { to: '/dashboard', label: 'Dashboard' },
-  { to: '/login', label: 'Login' },
-  { to: '/register', label: 'Register' }
+  { to: '/campaigns', label: 'Campaigns' }
 ];
 
 const Navbar = () => {
@@ -24,6 +20,15 @@ const Navbar = () => {
             {link.label}
           </Link>
         ))}
+        {localStorage.getItem('token') && (
+          <button
+            className="px-2 py-1 rounded transition font-medium bg-red-500 text-white hover:bg-red-600"
+            onClick={() => {
+              localStorage.removeItem('token');
+              window.location.href = '/login';
+            }}
+          >Logout</button>
+        )}
       </div>
     </nav>
   );
